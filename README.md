@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image1]: ./images/Visualization_dataset.png "Visualization"
 [image2]: ./images/all_traffic_signs.png "All traffic signs"
 [image3]: ./images/random_noise.jpg "Random Noise"
-[image4]: ./images/02_speed_limit_50.jng "Traffic Sign 1"
+[image4]: ./images/02_speed_limit_50.jpg "Traffic Sign 1"
 [image5]: ./images/09_no_passing.jpg "Traffic Sign 2"
 [image6]: ./images/13_Yield.jpg "Traffic Sign 3"
 [image7]: ./images/26_traffic_signals.jpg "Traffic Sign 4"
