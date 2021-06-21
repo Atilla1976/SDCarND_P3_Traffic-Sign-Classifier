@@ -20,11 +20,11 @@ The goals / steps of this project are the following:
 [image1]: ./images/Visualization_dataset.png "Visualization"
 [image2]: ./images/grayscale.jpg "Grayscaling"
 [image3]: ./images/random_noise.jpg "Random Noise"
-[image4]: ./images/placeholder.png "Traffic Sign 1"
-[image5]: ./images/placeholder.png "Traffic Sign 2"
-[image6]: ./images/placeholder.png "Traffic Sign 3"
-[image7]: ./images/placeholder.png "Traffic Sign 4"
-[image8]: ./images/placeholder.png "Traffic Sign 5"
+[image4]: ./images/02_speed_limit_50.jng "Traffic Sign 1"
+[image5]: ./images/09_no_passing.jpg "Traffic Sign 2"
+[image6]: ./images/13_Yield.jpg "Traffic Sign 3"
+[image7]: ./images/26_traffic_signals.jpg "Traffic Sign 4"
+[image8]: ./images/40_roundabout_mandatory.jpg "Traffic Sign 5"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -52,7 +52,7 @@ signs data set:
 #### 2.Visualization of the dataset.
 
 Here is an exploratory visualization of the data set. The three bar charts in the first row showing the frequency  of each traffic sign in the three datasets - training data, validation data and test data set.
-The three bar charts in the second row showing the distribution  of each traffic sign in the three datasets. Here you can see that only in the test dataset the order of the traffic sign images are shuffled.
+The three bar charts in the second row showing the distribution  of each traffic sign in the three datasets. Here you can see that only in the test dataset the order of the traffic sign images are shuppled.
 
 ![alt text][image1]
 
@@ -72,15 +72,6 @@ Here is an example of a traffic sign image before and after grayscaling and norm
 
 As a second step, I normalized the image data because .Among the best practices for training a Neural Network is to normalize the data to obtain a mean close to zero. Normalizing the input data generally speeds up learning. That is the reason, why I normelized the dataset in the second step. First I normalized the image data with "(pixel - 128)/128)". But I got better results by normalizing with "pixel/255".
 
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -157,7 +148,7 @@ Here are the results of the prediction:
 | Yield					| Yield											|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of 0.937.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -220,8 +211,3 @@ For the fifth image, the model is absolutely sure that this is a Yield sign (pro
 | <.0000				| Speed limit (30km/h)							|
 | <.0000				| Speed limit (50km/h)							|
 | <.0000				| Speed limit (60km/h)							|
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-
-
