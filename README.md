@@ -18,9 +18,9 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./images/Visualization_dataset.png "Visualization"
-[image2]: ./images/grayscale.jpg "Grayscaling"
+[image2]: ./images/all_traffic_signs.png "All traffic signs"
 [image3]: ./images/random_noise.jpg "Random Noise"
-[image4]: ./images/02_speed_limit_50.jpg "Traffic Sign 1"
+[image4]: ./images/02_speed_limit_50.jng "Traffic Sign 1"
 [image5]: ./images/09_no_passing.jpg "Traffic Sign 2"
 [image6]: ./images/13_Yield.jpg "Traffic Sign 3"
 [image7]: ./images/26_traffic_signals.jpg "Traffic Sign 4"
@@ -52,9 +52,16 @@ signs data set:
 #### 2.Visualization of the dataset.
 
 Here is an exploratory visualization of the data set. The three bar charts in the first row showing the frequency  of each traffic sign in the three datasets - training data, validation data and test data set.
-The three bar charts in the second row showing the distribution  of each traffic sign in the three datasets. Here you can see that only in the test dataset the order of the traffic sign images are shuppled.
+The three bar charts in the second row showing the distribution  of each traffic sign in the three datasets. Here you can see that only in the test dataset the order of the traffic sign images are shuffled.
+
 
 ![alt text][image1]
+
+The following images shows all types of traffic signs in the dataset.
+
+
+![alt_text][image2]
+
 
 ### Design and Test a Model Architecture
 
