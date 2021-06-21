@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./images/Visualization_dataset.png "Visualization"
 [image2]: ./images/all_traffic_signs.png "All traffic signs"
-[image3]: ./images/random_noise.jpg "Random Noise"
+[image3]: ./images/gry_norm_traffic_signal_sign.png "greyscaled and normalized traffic signal sign"
 [image4]: ./images/02_speed_limit_50.jpg "Traffic Sign 1"
 [image5]: ./images/09_no_passing.jpg "Traffic Sign 2"
 [image6]: ./images/13_Yield.jpg "Traffic Sign 3"
@@ -57,7 +57,7 @@ The three bar charts in the second row showing the distribution  of each traffic
 
 ![alt text][image1]
 
-The following images shows all types of traffic signs in the dataset.
+The following images shows all 43 types of traffic signs in the training dataset.
 
 
 ![alt_text][image2]
@@ -69,15 +69,11 @@ The following images shows all types of traffic signs in the dataset.
 
 As a first step, I decided to convert the images to grayscale because none of the traffic signs is only different in colour from another. Traffic signs can be distinguished from one another by their shape or the shape of the characters shown.
 
-Here is an example of a traffic sign image before and after grayscaling and normalizing.
-
-![alt text][image2]
-
-Here is an example of a traffic sign image before and after grayscaling and normalizing.
-
-![alt text][image2]
-
 As a second step, I normalized the image data because .Among the best practices for training a Neural Network is to normalize the data to obtain a mean close to zero. Normalizing the input data generally speeds up learning. That is the reason, why I normelized the dataset in the second step. First I normalized the image data with "(pixel - 128)/128)". But I got better results by normalizing with "pixel/255".
+
+Here is an example of a traffic signal sign  image after grayscaling and normalizing.
+
+![alt text][image3]
 
 
 
