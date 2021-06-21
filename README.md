@@ -52,7 +52,7 @@ signs data set:
 #### 2.Visualization of the dataset.
 
 Here is an exploratory visualization of the data set. The three bar charts in the first row showing the frequency  of each traffic sign in the three datasets - training data, validation data and test data set.
-The three bar charts in the second row showing the distribution  of each traffic sign in the three datasets. Here you can see that only in the test dataset the order of the traffic sign images are shuppled.
+The three bar charts in the second row showing the distribution  of each traffic sign in the three datasets. Here you can see that only in the test dataset the order of the traffic sign images are shuffled.
 
 ![alt text][image1]
 
