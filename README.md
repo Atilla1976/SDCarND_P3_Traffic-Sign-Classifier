@@ -66,7 +66,9 @@ The following images shows all 43 classes of traffic signs in the training datas
 
 ### Design and Test a Model Architecture
 
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+#### 1. Preprocessing the image data.
+
+#### What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
 As a first step, I decided to convert the images to grayscale because none of the traffic signs is only different in colour from another. Traffic signs can be distinguished from one another by their shape or the shape of the characters shown.
 
@@ -77,11 +79,13 @@ Here is an example of a traffic signal sign  image after grayscaling and normali
 
 ![alt text][image3]
 
-In a third an last step, I shuffeled the order of the training and validation data sets.
+In a third and last step, I shuffeled the order of the data sets because they were sorted as you can see in the training- and validations diagrams above.
 
 ![alt text][image4]
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Final model architecture
+
+#### looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
@@ -105,7 +109,7 @@ My final model consisted of the following layers:
 |						|												| 
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. How I trained my model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 The first architecture I tried was the shown above but without Dropout. By optimizing the hyperparameter - Epoch, Batchsize and learning rate - it was not possible to achieve an validation accuracy above 0.93. To train the model I choosed the following hyperparameter values
 
@@ -120,7 +124,7 @@ Because of the big difference between the training accuracy (close to 1) and val
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-To get the validation set accuracy at least 0.93 I added Dropout
+To get the validation set accuracy at least 0.93 I added Dropout-layers.
 
 My final model results were:
 * training set accuracy of 0,996
@@ -128,19 +132,8 @@ My final model results were:
 * test set accuracy of 0,937
 
 
-The first architecture I tried was the shown above but without Dropout. By optimizing the hyperparameter - Epoch, Batchsize and learning rate - it was not possible to achieve an validation accuracy of well over 0.9. There were also big differences to the training accuracy (very close to 1). So it seem 
-* What were some problems with the initial architecture?
-* In a second step I adjusted the architecture adjusted by including dropout 
+A high accuracy on the training set but low accuracy on the validation set in the first architecture implies overfitting. Therefore, in a second step, I adjusted the architecture by including dropout. Here I choose several architectures: For example dropout layer after each activation function. But in the end the best validation accuracy results out of using dropout after fully connected-/Relu layers with a keep_prob value of 0.55.
 
-
-and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
 
 ### Testing the Model on New Images
