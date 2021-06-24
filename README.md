@@ -34,13 +34,11 @@ The goals / steps of this project are the following:
 ---
 ### Writeup / README
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-You're reading it! and here is a link to my [project code](https://https://github.com/DerStuttgarter/SDCarND_P3_Traffic-Sign-Classifier/blob/main/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/DerStuttgarter/SDCarND_P3_Traffic-Sign-Classifier/blob/main/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
-#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. Providing a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used the Python library to calculate summary statistics of the traffic
 signs data set:
@@ -53,8 +51,8 @@ signs data set:
 
 #### 2.Visualization of the dataset.
 
-Here is an exploratory visualization of the data set. The three bar charts in the first row showing the frequency  of each traffic sign in the three datasets - training data, validation data and test data set.
-The three bar charts in the second row showing the distribution  of each traffic sign in the three datasets. Here you can see that only in the test dataset the order of the traffic sign images are shuffled.
+Here is a visualization of the data set. The three bar charts in the first row showing the frequency  of each traffic sign in the three datasets - training data, validation data and test data set.
+The three bar charts in the second row showing the distribution of each traffic sign in the three datasets. Here you can see that only in the test dataset the order of the traffic sign images are shuffled.
 
 
 ![alt text][image1]
@@ -71,12 +69,12 @@ The following images shows all 43 classes of traffic signs in the training datas
 
 #### What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because none of the traffic signs is only different in colour from another. Traffic signs can be distinguished from one another by their shape or the shape of the characters shown.
+As a first step, I decided to convert the images to grayscale because none of the traffic signs is only different in colour from another. Traffic signs can be distinguished from one another by their shape or the shape of the content shown.
 
 As a second step, I normalized the image data. Among the best practices for training a Neural Network is to normalize the data to obtain a mean close to zero. Normalizing the input data generally speeds up learning. 
-First I normalized the image data with "(pixel - 128)/128)". But I got better results by normalizing with "pixel/255".
+First I normalized the image data with "(pixel - 128)/128". But I got better results by normalizing with "pixel/255".
 
-Here is an example of a traffic signal sign  image after grayscaling and normalizing.
+Here is an example of an image with a traffic signal sign after grayscaling and normalizing.
 
 ![alt text][image3]
 
@@ -112,12 +110,12 @@ My final model consisted of the following layers:
 
 #### 3. How I trained my model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-The first architecture I tried was the LeNet architecture because it is small in term of memory footprint and is made to recognize objects in images.
+The first architecture I tried was the LeNet architecture (with out the dropout-layers) because it is small in term of memory footprint and is made to recognize objects in images.
 
 ![alt text][image5]
 
 
-the shown above but without Dropout. By optimizing the hyperparameter - Epoch, Batchsize and learning rate - it was not possible to achieve an validation accuracy above 0.93. To train the model I choosed the following hyperparameter values
+By optimizing the hyperparameter - Epoch, Batchsize and learning rate - it was not possible to achieve an validation accuracy above 0.93. To train the model I choosed the following hyperparameter values
 
 * Epoch: from 15  to 70
 * Batchsize: from 64  to 196
@@ -125,12 +123,9 @@ the shown above but without Dropout. By optimizing the hyperparameter - Epoch, B
 
 Considering the computing time, I found with the first architecture an optimum in area Epoch = 25, Batchsize = 128 and learning rate = 0.00095.
 
-Because of the big difference between the training accuracy (close to 1) and validation time I tried to implement Dropout. 
 
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
-To get the validation set accuracy at least 0.93 I added Dropout-layers.
+The high accuracy on the training set (very close to 1) but low accuracy on the validation set (around 0.9) in the first architecture implies overfitting. Therefore, in a second step, I adjusted the architecture by including dropout-layers. Here I choose several architectures: For example dropout layer after each activation function. But in the end the best validation accuracy results out of using dropout only after fully connected-/Relu layers with a keep_prob value of 0.55.
 
 My final model results were:
 * training set accuracy of 0,996
@@ -138,11 +133,6 @@ My final model results were:
 * test set accuracy of 0,937
 
 
-A high accuracy on the training set but low accuracy on the validation set in the first architecture implies overfitting. Therefore, in a second step, I adjusted the architecture by including dropout. Here I choose several architectures: For example dropout layer after each activation function. But in the end the best validation accuracy results out of using dropout after fully connected-/Relu layers with a keep_prob value of 0.55.
-
-I choose the LeNet architecture because it is small in term of memory footprint and is made to recognize objects in images.
-
- 
 
 ### Testing the Model on New Images
 
