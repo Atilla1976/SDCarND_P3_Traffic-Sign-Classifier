@@ -21,11 +21,12 @@ The goals / steps of this project are the following:
 [image2]: ./images/all_traffic_signs.png "All traffic signs"
 [image3]: ./images/gry_norm_traffic_signal_sign.png "greyscaled and normalized traffic signal sign"
 [image4]: ./images/shuffled_distribution.png "Shuffled distribution of training and validation data"
-[image5]: ./images/02_speed_limit_50.jpg "Traffic Sign 1"
-[image6]: ./images/09_no_passing.jpg "Traffic Sign 2"
-[image7]: ./images/13_Yield.jpg "Traffic Sign 3"
-[image8]: ./images/26_traffic_signals.jpg "Traffic Sign 4"
-[image9]: ./images/40_roundabout_mandatory.jpg "Traffic Sign 5"
+[image5]: ./images/LeNet.png "LeNet architecture"
+[image6]: ./images/02_speed_limit_50.jpg "Traffic Sign 1"
+[image7]: ./images/09_no_passing.jpg "Traffic Sign 2"
+[image8]: ./images/13_Yield.jpg "Traffic Sign 3"
+[image9]: ./images/26_traffic_signals.jpg "Traffic Sign 4"
+[image10]: ./images/40_roundabout_mandatory.jpg "Traffic Sign 5"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -111,7 +112,12 @@ My final model consisted of the following layers:
 
 #### 3. How I trained my model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-The first architecture I tried was the shown above but without Dropout. By optimizing the hyperparameter - Epoch, Batchsize and learning rate - it was not possible to achieve an validation accuracy above 0.93. To train the model I choosed the following hyperparameter values
+The first architecture I tried was the LeNet architecture because it is small in term of memory footprint and is made to recognize objects in images.
+
+![alt text][image5]
+
+
+the shown above but without Dropout. By optimizing the hyperparameter - Epoch, Batchsize and learning rate - it was not possible to achieve an validation accuracy above 0.93. To train the model I choosed the following hyperparameter values
 
 * Epoch: from 15  to 70
 * Batchsize: from 64  to 196
@@ -134,6 +140,8 @@ My final model results were:
 
 A high accuracy on the training set but low accuracy on the validation set in the first architecture implies overfitting. Therefore, in a second step, I adjusted the architecture by including dropout. Here I choose several architectures: For example dropout layer after each activation function. But in the end the best validation accuracy results out of using dropout after fully connected-/Relu layers with a keep_prob value of 0.55.
 
+I choose the LeNet architecture because it is small in term of memory footprint and is made to recognize objects in images.
+
  
 
 ### Testing the Model on New Images
@@ -142,7 +150,7 @@ A high accuracy on the training set but low accuracy on the validation set in th
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image5]		 ![alt text][image6]		 ![alt text][image7]		![alt text][image8]		 ![alt text][image9]
+![alt text][image6]		 ![alt text][image7]		 ![alt text][image8]		![alt text][image9]		 ![alt text][image10]
 
 
 The first image with a Speed limit 50 km/h sign might be difficult to classify because it was taken from obliquely below.
