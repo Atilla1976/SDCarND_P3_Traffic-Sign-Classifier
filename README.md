@@ -22,11 +22,12 @@ The goals / steps of this project are the following:
 [image3]: ./images/gry_norm_traffic_signal_sign.png "greyscaled and normalized traffic signal sign"
 [image4]: ./images/shuffled_distribution.png "Shuffled distribution of training and validation data"
 [image5]: ./images/LeNet.png "LeNet architecture"
-[image6]: ./images/02_speed_limit_50.jpg "Traffic Sign 1"
-[image7]: ./images/09_no_passing.jpg "Traffic Sign 2"
-[image8]: ./images/13_Yield.jpg "Traffic Sign 3"
-[image9]: ./images/26_traffic_signals.jpg "Traffic Sign 4"
-[image10]: ./images/40_roundabout_mandatory.jpg "Traffic Sign 5"
+[image6]: ./images/Acc_E25_B124_R00095_DO_ConvFullc_Tr1_0_Ev0_55.png "Training Validation Test Accuracy"
+[image7]: ./images/02_speed_limit_50.jpg "Traffic Sign 1"
+[image8]: ./images/09_no_passing.jpg "Traffic Sign 2"
+[image9]: ./images/13_Yield.jpg "Traffic Sign 3"
+[image10]: ./images/26_traffic_signals.jpg "Traffic Sign 4"
+[image11]: ./images/40_roundabout_mandatory.jpg "Traffic Sign 5"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -132,7 +133,7 @@ My final model results were:
 * validation set accuracy of 0,955
 * test set accuracy of 0,937
 
-
+![alt text][image6]
 
 ### Testing the Model on New Images
 
@@ -140,7 +141,7 @@ My final model results were:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image6]		 ![alt text][image7]		 ![alt text][image8]		![alt text][image9]		 ![alt text][image10]
+![alt text][image7]		 ![alt text][image8]		 ![alt text][image9]		![alt text][image10]		 ![alt text][image11]
 
 
 The first image with a Speed limit 50 km/h sign might be difficult to classify because it was taken from obliquely below.
